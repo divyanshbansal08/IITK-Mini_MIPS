@@ -27,19 +27,19 @@ To design and implement a custom MIPS-like processor supporting a simplified Ins
 
 | Module        | Description |
 |---------------|-------------|
-| `mini_mips.v` | Top-level integration of all components |
-| `pc.v`        | Program Counter with update logic |
-| `inst_memory.v` | ROM-based instruction memory |
+| `iitk_mini_mips.v` | Top-level integration of all components |
+| `pc_register.v`        | Program Counter with update logic |
+| `instruction_memory.v` | ROM-based instruction memory |
 | `data_memory.v` | RAM-based data memory |
 | `register_file.v` | 32 GPRs with read/write ports |
-| `fpu_register_file.v` | 32 FPRs with read/write access |
+| `fp_register_file.v` | 32 FPRs with read/write access |
 | `alu.v`       | Arithmetic and logic unit for integer operations |
-| `fpu.v`       | Handles floating point addition, subtraction, multiplication |
-| `control_unit.v` | Generates control signals based on opcode and funct |
-| `mux_*.v`     | Parameterized multiplexers for data/control flow |
-| `sign_extender.v` | Extends 16-bit immediate values to 32-bit |
-| `jr_control.v` | Controls jump register execution |
-| `testbench.v` | Testbench with sample instruction memory and validation |
+| `control_unit.v` | Generates control signals based on opcode and funct | 
+| `instruction_fetch.v` | Fetches the instruction from instruction memory based on the current PC |
+| `logic_unit.v` | Performs bitwise operations (AND, OR, XOR, NOR) between two 32-bit inputs using a control select signal |
+| `full_adder.v` | Simple adder to perform 32-bit addition |
+| `jump_unit.v` | Controls jump register execution |
+| `iitk_mini_mips_tb.v` | Testbench with sample instruction memory and validation |
 
 ---
 
